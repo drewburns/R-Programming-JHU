@@ -65,3 +65,57 @@ make.power <- function(n) {
 x <- Sys.time()
 y <- as.POSIXct(x)
 
+################################################################
+
+#APPLY Functions
+
+x <- list(a= 1:5, b = rnorm(10))
+lapply(x,mean)
+
+
+x <- matrix(rnorm(200),20,10)
+apply(x, 2 , mean)
+
+apply(x,1, sum)
+
+mapply(rep, 1:4,4:1)
+#instead of typing list(rep(1,4), rep(2,3), rep(3,2), rep(4,1))
+
+
+x <- c(rnorm(10), runif(10), rnorm(10,1))
+f <- gl(3,10) # makes 10 1's, 10 2's, 10 3's
+f
+x
+tapply(x,f,mean)
+
+split(x,f) #splits into the groups
+
+############################
+x <- rnorm(100,10,10)
+str(x)
+#str - very important function
+#displays and summarizes the object
+
+
+#rnorm(number,mean,sd)
+#set.seed(1) - reproduce random numbers
+#Generating Poisson Data ?Look up later?
+rprois(10,1)
+
+###########################
+
+set.seed(20)
+x <- rnorm(100) #rbinorm(100,1,0.5) binary distribution
+e <- rnorm(100, 0 , 2)
+y <- 0.5 + 2*x + e
+summary(y)
+plot(x,y)
+
+##########################
+
+sample(letters,5)
+sample(1:10,5)
+##########################
+system.time(readLines("http://www.jhsph.edu"))
+summaryRprof()
+
