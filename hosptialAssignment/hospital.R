@@ -49,7 +49,7 @@ rankHospital <- function(state,outcome, num="best") {
     n <- length(unique(x))
     selectedHospital <- stateFiltered[which(x == sort(unique(x),partial=n-num)[n-num]),]
   }
-  # print(paste("The", num , "ranked hospital(s) are", selectedHospital[,2]))
+  print(paste("The", num , "ranked hospital(s) are", selectedHospital[,2]))
   
   selectedHospital
 }
